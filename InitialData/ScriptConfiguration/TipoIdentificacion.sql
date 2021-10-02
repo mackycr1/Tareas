@@ -1,7 +1,7 @@
-﻿DROP TABLE IF EXISTS #TipoIdnetificacionTemp
+﻿DROP TABLE IF EXISTS #TipoIdentificacionTemp
 
 SELECT IdTipoIdentificacion, Descripcion
-INTO #TipoIdnetificacionTemp
+INTO #TipoIdentificacionTemp
 FROM
 (
     VALUES 
@@ -16,7 +16,7 @@ UPDATE : Upades any existing data
 UPDATE TI 
 SET TI.Descripcion = TITEMP.Descripcion
 FROM [dbo].[TipoIdentificacion] AS TI
-INNER JOIN #TipoIdnetificacionTemp AS TITEMP
+INNER JOIN #TipoIdentificacionTemp AS TITEMP
 ON TI.IdTipoIdentificacion = TITEMP.IdTipoIdentificacion
 
 
@@ -32,7 +32,7 @@ INSERT INTO [dbo].[TipoIdentificacion]
 )
 SELECT IdTipoIdentificacion, 
        Descripcion
-FROM #TipoIdnetificacionTemp
+FROM #TipoIdentificacionTemp
 
 
 /******************************************************************************
