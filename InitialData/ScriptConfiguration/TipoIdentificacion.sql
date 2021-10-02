@@ -6,8 +6,8 @@ FROM
 (
     VALUES 
     (1, 'Cedula'),
-    (2, 'Pasaporte '),
-    (3, 'Cedula Juridica ')
+    (2, 'Pasaporte'),
+    (3, 'Cedula Juridica')
 ) AS TEMP (IdTipoIdentificacion, Descripcion)
 
 /******************************************************************************
